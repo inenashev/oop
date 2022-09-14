@@ -36,7 +36,7 @@ class Figure:
 
 
 class Rectangle(Figure):
-    def __int__(self, sides, color):
+    def __init__(self, sides, color):
         if len(sides) != 2:
             raise ValueError("У прямоугольника нужно передавать 2 стороны")
         super().__init__(sides, color)
@@ -52,10 +52,11 @@ class Rectangle(Figure):
 
 
 class Triangle(Figure):
-    def __int__(self, sides, color):
+    def __init__(self, sides, color):
         if len(sides) != 3:
             raise ValueError("У треугольника нужно передавать 2 стороны")
-        super().__init__(sides, color)
+        else:
+            super().__init__(sides, color)
 
     def __repr__(self):
         return f"Triangle, color: {self.color}, sides: {str(self.sides)}"
